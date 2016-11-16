@@ -9,6 +9,6 @@ Home improvement
 
 <img src="/assets/images/2016/11/hallway1-2.jpg" />
 <img src="/assets/images/2016/11/hallway2.jpg" />
-<img src="/assets/images/2016/11/hallway3-1.jpg" />
+<img src="/assets/images/2016/10/hallway3-1.jpg" />
 <img src="/assets/images/2016/11/rubbish-front.jpg" />
 <img src="/assets/images/2016/11/wallpaper.jpg" />
