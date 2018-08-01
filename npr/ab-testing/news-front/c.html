@@ -2371,7 +2371,8 @@ NPR.serverVars = {"storyId":"1001","facebookAppId":"138837436154588","webpackPub
 }
 
 #main-section #featured .item.has-image:not(:first-child) .item-image,
-#main-section #overflow .item-image {
+#main-section #overflow .item-image,
+#main-section #infinitescrollwrap .item-image{
   display: block;
   float: right;
   flex: 0 0 20%;
@@ -2387,24 +2388,30 @@ NPR.serverVars = {"storyId":"1001","facebookAppId":"138837436154588","webpackPub
 #main-section #overflow {
   margin: 0;
 }
-#main-section #overflow .item {
+#main-section #overflow .item,
+#main-section #infinitescrollwrap .item {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#main-section #overflow .item .title {
+#main-section #overflow .item .title,
+#main-section #infinitescrollwrap .item .title {
   font-size: 2.2rem;
 }
-#main-section #overflow .item-image {
+#main-section #overflow .item-image,
+#main-section #infinitescrollwrap .item-image {
     order: 2;
 }
-#main-section #overflow .item:first-child {
+#main-section #overflow .item:first-child,
+#main-section #infinitescrollwrap .item:first-child {
   margin-top: 0;
 }
-#main-section #overflow .item .affiliation {
+#main-section #overflow .item .affiliation,
+#main-section #infinitescrollwrap .item affiliation {
     display: none;
 }
-#main-section #overflow .item .item-info {
+#main-section #overflow .item .item-info,
+#main-section #infinitescrollwrap .item .item-info {
     margin-bottom: 0;
     width: 100%;
     margin-left: 0;
