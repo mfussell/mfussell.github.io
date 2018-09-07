@@ -554,7 +554,7 @@ NPR.serverVars = {"storyId":"471757314","facebookAppId":"138837436154588","webpa
 </div>
 
 <!-- END ID="STORY-META" CLASS="STORY-META" -->
-<div id="" class="storylocation linkLocation">
+<div id="" class="storytext newsletter storylocation linkLocation">
      <p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--> The NPR stories you want, delivered to your inbox.</p>  
      <div class="newsletter__subscribe-container">
       <div id="wrap" class="newsletter__signup-form">
@@ -570,30 +570,30 @@ NPR.serverVars = {"storyId":"471757314","facebookAppId":"138837436154588","webpa
             Not sure which to pick? Choose from our featured newsletters:
             <span class="newsletter__subscribe-count"></span>
         </h4>
-        <label class="newsletter__news-item" for="checkbox1">
+        <div class="newsletter__news-item">
             <div class="newsletter__news-item-content">
                 <div class="newsletter__news-item-schedule slug">weekly</div>
                 <div class="newsletter__news-item-title">Best of NPR</div>
                 <div class="newsletter__news-item-description">Get the stories that grabbed us this week.</div>
-                <a class="newsletter__preview">Preview a sample</a>
+                <a href="https://www.npr.org/newsletter/best-of-npr" target="_blank" class="newsletter__preview">Preview a sample</a>
             </div>
             <div class="newsletter__news-item-selection">
                 <input id="checkbox1" type="checkbox">
             </div>
-        </label>
-        <label class="newsletter__news-item" for="checkbox2">
+          </div>
+        <div class="newsletter__news-item" for="checkbox2">
             <div class="newsletter__news-item-content">
                 <div class="newsletter__news-item-schedule slug">daily</div>
                 <div class="newsletter__news-item-title">All Songs Considered</div>
                 <div class="newsletter__news-item-description">
                     We stay on top of the latest stories and deliver them to you every weekday.
                 </div>
-                <a class="newsletter__preview">Preview a sample</a>
+                <a href="#" class="newsletter__preview">Preview a sample</a>
             </div>
             <div class="newsletter__news-item-selection">
                 <input id="checkbox2" type="checkbox">
             </div>
-        </label>
+          </div>
         <h4 class="newsletter__list-verbage">
             Or browser through all our newsletters:
         </h4>
@@ -787,8 +787,23 @@ NPR.serverVars = {"storyId":"471757314","facebookAppId":"138837436154588","webpa
 <style>
 
 h1 {
+    font-family: "Gotham SSm",Helvetica,Arial,sans-serif;
     font-size: 3.5rem;
+    color: #333;
     letter-spacing: -.00625em;
+    margin-bottom: 15px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+@media only screen and (max-width:768px) {
+  h1,
+  .storytext {
+    padding-left: 15px;
+
+  }
+}
+.storytext.newsletter p {
+  padding-left: 0;
 }
 .newsletter__subscribe-container {
     width: 360px;
@@ -816,13 +831,13 @@ h1 {
 }
 .newsletter__signup-form.fixed {
     position: fixed;
-    top: 10px;
+    top: 0;
     width: 280px;
     background: white;
     z-index: 4;
     padding: 10px;
-    border: 1px solid #222;
-    box-shadow: 2px 2px 2px #ddd;
+    border-bottom: 10px solid #fff;
+    box-shadow: 0 0 4px #ddd;
     transition: padding-top .2s ease-in;
 }
 .newsletter__signup-form.fixed ~ .newsletter__news-items {
@@ -838,6 +853,8 @@ h1 {
 }
 .newsletter__signup-form label {
   margin: 0 0 1rem;
+  font-family: "Gotham SSm",Helvetica,Arial,sans-serif;
+  font-size: 14px;
 }
 .newsletter__signup-form input {
   padding: 4px;
@@ -847,6 +864,7 @@ h1 {
   display: inline-block;
   margin: 10px 0 0;
   padding: 10px 15px;
+  font-size: 31px;
   background: #5076b8;
   color: #fff;
   border: 0;
@@ -856,12 +874,13 @@ h1 {
   letter-spacing: 2px;
   cursor: pointer;
   transition: all .45s ease-in-out;
+  border-radius: 3px;
+  font-family: "Knockout 31 4r",HelveticaNeue-CondensedBold,Helvetica,Arial,sans-serif;
 }
 .newsletter__signup-form button[disabled]{
   cursor: not-allowed;
-  border: 1px solid #999999;
   background-color: #cccccc;
-  color: #666666;
+  color: #fff;
 }
 .newsletter__news-items {
     display: grid;
@@ -883,38 +902,48 @@ h1 {
   transition: background-color 0.3s ease;
 }
 .newsletter__news-item.selected {
-    background-color: hsl(221, 82%, 82%);
+    background-color: #C3D1E9;
 }
 .newsletter__featured-verbage {
     grid-column: 1/-1;
+    font-family: "Gotham SSm",Helvetica,Arial,sans-serif;
+    font-size: 14px;
 }
 .newsletter__list-verbage {
-    grid-column: 1/-1;
-    border-top: 1px solid #eee;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
+  font-family: "Gotham SSm",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  grid-column: 1/-1;
+  border-top: 1px solid #eee;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
 }
 
 .newsletter__news-item-content {
   flex-grow: 1;
 }
 .newsletter__news-item-schedule {
-  color: #777;
+  color: #4A4A4A;
+  font-family: 'Knockout 31 4r', HelveticaNeue-CondensedBold, Helvetica, Arial, sans-serif;
   margin: .5rem 0;
   text-transform: uppercase;
 }
-.newsletter__news-item.selected .newsletter__news-item-schedule {
 
-}
 .newsletter__news-item-title {
+  font-family: "Gotham SSm",Helvetica,Arial,sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  font-size: 1.2rem;
   line-height: 1.4rem;
   margin: .8rem 0;
 }
+.newsletter__news-item-description {
+  font-family: "Gotham SSm",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+}
 .newsletter__preview {
     margin: .8rem 0;
-    display: block;
+    font-size: 15px;
+    display: inline-block;
+    font-family: 'Knockout 31 4r', HelveticaNeue-CondensedBold, Helvetica, Arial, sans-serif;
 }
 .newsletter__news-item-selection {
   margin-top: 2.4rem;
@@ -929,9 +958,17 @@ src="https://code.jquery.com/jquery-3.3.1.min.js"
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script>
 <script>
+
+$('.newsletter__news-item').click(function() {
+  var $thischeckbox = $(this).find('input:checkbox').trigger('click');
+});
+
+$(".newsletter__preview").click(function (e) {
+    e.stopPropagation();
+});
+
 $(".newsletter__news-item-selection input").change(function() {
     var checkedItemsCount = $(":checkbox:checked").length;
-    var addS = (checkedItemsCount == 1 ? "" : "s");
     if(this.checked) {
         $(this).closest('.newsletter__news-item').addClass('selected');
     } else {
@@ -939,12 +976,10 @@ $(".newsletter__news-item-selection input").change(function() {
     }
     if (checkedItemsCount > 0 ) {
         $(':button[type="submit"]').prop('disabled', false);
-        //$('.newsletter__subscribe-count').text(checkedItemsCount + ' selection' + addS );
-        $(':button[type="submit"]').text('Subscribe to ' + checkedItemsCount + ' newsletter' + addS );
+        $(':button[type="submit"]').text('Subscribe' );
     }
     else {
         $(':button[type="submit"]').prop('disabled', true);
-        $('.newsletter__subscribe-count').text('');
         $(':button[type="submit"]').text('Choose newsletters' );
     }
 });
