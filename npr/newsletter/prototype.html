@@ -959,11 +959,11 @@ integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script>
 <script>
 
-$('.newsletter__news-item').click(function() {
-  var $thischeckbox = $(this).find('input:checkbox').trigger('click');
+$('.newsletter__news-item').click(function(e) {
+  $(this).find('input:checkbox').trigger('click');
 });
 
-$(".newsletter__preview").click(function (e) {
+$(".newsletter__preview, input:checkbox").click(function (e) {
     e.stopPropagation();
 });
 
@@ -994,8 +994,6 @@ var sticky = header.offsetTop + header.offsetHeight - 40;
 
 
 window.onscroll = function() {
-    console.log(sticky);
-    console.log(window.pageYOffset);
     if (window.pageYOffset > sticky) {
         header.classList.add("fixed");
     } else {
