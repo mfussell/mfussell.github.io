@@ -1,0 +1,22 @@
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 50vh;
+    max-width: 100%;
+}
+
+.image-container  img {
+    max-width: 100%;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.image-index {
+    position:absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 22px;
+    color: royalblue;
+}
