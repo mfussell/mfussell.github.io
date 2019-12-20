@@ -2,3 +2,12 @@
     max-width: 120px;
     margin: 15px;
 }
+
+.screen-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.reveal .fragment img {
+    max-height: 400px;
+}

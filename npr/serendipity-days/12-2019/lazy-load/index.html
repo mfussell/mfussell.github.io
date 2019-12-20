@@ -27,15 +27,98 @@
 		<div class="reveal">
 			<img src="npr-logo.svg" class="npr-logo">
 			<div class="slides">
-				<section>Native Lazy Loading...finally
-					<h2>What is it?</h2>
-					<div class="fragment"><pre><code data-line-numbers="1"><img src="image.jpg" loading="lazy"/></code></pre></div>
+				<section>
+					<h2>Native Lazy Loading</h2><Native>
+					<div class="fragment">Available behind a flag in Chrome 75, the loading attribute 
+						went live in Chrome 76.
+					</div>
+					<div class="fragment">Browser support?</div>
+					<img class="fragment" src="images/support.png"/>
+					<div class="fragment">Ignored by unsupported browsers</div>
+				</section>
+
+				<section>
+					<div>The <code>loading</code> attribute can be placed in 
+						img and iframe tags. 
+					</div>
+					<div class="fragment">
+						"loading=lazy" tells the browser to defer downloading
+						offscreen content until a user scrolls to the item.
+					</div>
+				</section>
+
+				<section>
+					By simply adding the attribute, content that is never seen by the user isn't loaded, 
+					reducing network traffic and improving page performance.
+					<div class="fragment">
+						<pre><code><img src="image.jpg" loading="lazy"/></code></pre>
+						<pre><code><iframe src="silly-flash-thing.html" loading="lazy"></iframe></code></pre>
+					</div>
 					<div class="fragment">Other loading options...</div class="fragment">
 					<div class="fragment"><pre>loading=eager (load immediately)</div>
 					<div class="fragment"><pre>loading=auto (browser determines when to load)</div>
+				</section>
+
+				<section>
+					<h2>Demo time</h2>
+					<p><a href="no-lazy.html">images without loading attribute</a></p>
+					<p><a href="lazy.html">same page using lazy loading</a></p>
+				</section>
+
+				<section>
+					<h2>Should we be using this on npr.org?</h2>
+					<div class="fragment">a few comparisions</div>
+				</section>
+
+				<section>
+					<h2>Image test - An NPR multimedia page</h2>
+						<div class="fragment">
+							<img src="images/default-multimedia.png"/>
+						</div>
+						<div class="fragment">9.1 MB downloaded on page load</div>
+				</section>
+
+				<section>
+					<h2> Same page with lazy attribute</h2>
+					<div class="fragment">
+						<img src="images/lazy-multimedia.png" />
+					</div>
+					<div class="fragment">7.7 MB downloaded on page load</div>
+				</section>
+
+				<section>
+					<h2>Iframe test</h2>
+					<a href="https://www.npr.org/2019/12/17/788517486/station-breaks-our-favorite-live-sessions-of-2019">Favorite live session of 2019</a> - lots of iframes
+				</section>
+
+				<section>
+					<img src="images/prod-sessions.gif"/>
+					<p class="fragment">
+						652 network requests and 25.8 MB downloaded whether or not the page is scrolled.
+					</p>
+				</section>
+				<section>
+					<h2>Same page with iframe loading deffered</h2>
+				</section>
+				
+				<section>
+					<img src="images/devbox-session-onload.png" />
+					<p class="fragment">347 network requests and 17.1 MB downloaded</p>
 					
 				</section>
-				<section>Slide 2</section>
+
+				<section>
+					<img src="images/devbox-sessions-scroll.gif"/>
+					<p>iframes are loaded as they are scolled to</p>
+				</section>
+
+				<section>
+					<h2>Should we implement?</h2>
+					<p class="fragment">probably - after ensuring the user expereince isn't dimnished - 
+						take advantage of the new loading attribute on npr.org. 
+					</p>
+					<p class="fragment">testing was done on a devbox. Devboxes are not to be trusted.</p>
+				</section>
 			</div>
 		</div>
 
